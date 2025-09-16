@@ -23,10 +23,10 @@
     define	('DEFAULT_ACTION'	    , 'index');
 
     // ====================== DATABASE ===========================
-    define ('DB_HOST'			, '77.37.35.67');
-    define ('DB_USER'			, 'u134300833_furniture');
-    define ('DB_PASS'			, 'Nguyenhoangvu@123');
-    define ('DB_NAME'			, 'u134300833_furniture');
+    define ('DB_HOST'			, '');
+    define ('DB_USER'			, '');
+    define ('DB_PASS'			, '');
+    define ('DB_NAME'			, '');
     define ('DB_TABLE'			, 'group');
 
     // ====================== DATABASE TABLE ===========================
