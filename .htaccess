@@ -1,0 +1,64 @@
+
+Options -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+# Index
+RewriteRule		index 			        index.php?module=default&controller=index&action=index
+RewriteRule		cart 			        index.php?module=default&controller=user&action=cart
+RewriteRule		user 	                index.php?module=default&controller=user&action=index
+RewriteRule		about 	                index.php?module=default&controller=index&action=about
+RewriteRule		service	                index.php?module=default&controller=index&action=service
+RewriteRule		contact 	            index.php?module=default&controller=index&action=contact
+RewriteRule		blog 	                index.php?module=default&controller=index&action=blog
+
+# User
+RewriteRule		history      	        index.php?module=default&controller=user&action=history
+RewriteRule		cancel-([a-zA-Z0-9]+)   index.php?module=default&controller=user&action=history&id=$1
+RewriteRule		tracking      	        index.php?module=default&controller=user&action=tracking
+RewriteRule		destroy-([a-zA-Z0-9]+)   index.php?module=default&controller=user&action=tracking&id=$1
+RewriteRule		favorite      	        index.php?module=default&controller=user&action=favorite
+RewriteRule		logout      	        index.php?module=default&controller=index&action=logout
+RewriteRule		renew         	        index.php?module=default&controller=index&action=renew
+RewriteRule		profile-([0-9]+)        index.php?module=default&controller=user&action=profile&id=$1
+RewriteRule		sendmail                index.php?module=default&controller=user&action=sendmail
+RewriteRule		([0-9]+)-([0-9]+)       index.php?module=default&controller=user&action=order&product_id=$1&price=$2
+
+# Cart
+RewriteRule		deleteAll               index.php?module=default&controller=user&action=deleteAll
+
+
+# Category
+RewriteRule		diningroom      	    index.php?module=default&controller=product&action=shop&category_id=1-2
+RewriteRule		bedroom      	        index.php?module=default&controller=product&action=shop&category_id=3-4-5
+RewriteRule		livingroom      	    index.php?module=default&controller=product&action=shop&category_id=6-7-8-9
+
+RewriteRule		dining-tables      	    index.php?module=default&controller=product&action=shop&category_id=1
+RewriteRule		dining-chairs      	    index.php?module=default&controller=product&action=shop&category_id=2
+RewriteRule		bed-beds      	        index.php?module=default&controller=product&action=shop&category_id=3
+RewriteRule		bed-dressers-chests     index.php?module=default&controller=product&action=shop&category_id=4
+RewriteRule		bed-nighstands          index.php?module=default&controller=product&action=shop&category_id=5
+RewriteRule		living-sofas      	    index.php?module=default&controller=product&action=shop&category_id=6
+RewriteRule		living-sectionals       index.php?module=default&controller=product&action=shop&category_id=7
+RewriteRule		living-chairs      	    index.php?module=default&controller=product&action=shop&category_id=8
+RewriteRule		living-ottomans         index.php?module=default&controller=product&action=shop&category_id=9
+
+# Collection
+RewriteRule		collection-([0-9]+)     index.php?module=default&controller=product&action=collection&collection_id=$1
+
+# Product
+RewriteRule		([A-Za-z]+)-([0-9]+) 	index.php?module=default&controller=product&action=detail&product_id=$2
+
+# Designer
+RewriteRule		([0-9]+)-designer-([A-Za-z]+) 		index.php?module=default&controller=designer&action=info&designer_id=$1
+RewriteRule		designers 		                    index.php?module=default&controller=designer&action=index
+RewriteRule		([0-9]+)-designs-by-([A-Za-z]+)	    index.php?module=default&controller=designer&action=product&designer_id=$1
+
+# Builder
+RewriteRule		builder	                            index.php?module=designer&controller=index&action=index
+# RewriteRule		"^builder/detail-product/([0-9]+)$" 	    index.php?module=designer&controller=index&action=product&product_id=$1
+#RewriteRule		([0-9]+)	                    index.php?module=designer&controller=index&action=form?product_id=$1
+#RewriteRule		deta=il	            index.php?module=designer&controller=index&action=product?product_id=$1
